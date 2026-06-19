@@ -50,3 +50,38 @@ Antes de começar, você precisará ter instalado em sua máquina:
    ```bash
    git clone [https://github.com/code-wfb/aws-project-sre-lightup.git](https://github.com/code-wfb/aws-project-sre-lightup.git)
    cd aws-project-sre-lightup
+
+   Configure suas variáveis de ambiente:
+    Crie um arquivo .env na raiz do projeto (ele já está protegido pelo .gitignore) e adicione suas configurações da AWS:
+    Code snippet
+
+    AWS_PROFILE=seu-profile-ia
+    AWS_DEFAULT_REGION=us-east-1
+
+    Inicialize o Terraform:
+    Bash
+
+    terraform init
+
+    Valide o plano de execução:
+    Bash
+
+    terraform plan
+
+    Aplique a infraestrutura:
+    Bash
+
+    terraform apply -auto-approve
+
+    Acessando o monitoramento:
+    Após a finalização do Terraform, pegue o IP público gerado no outputs.tf e acesse no seu navegador:
+    Plaintext
+
+    http://<IP_PUBLICO_EC2>:3000
+
+🧼 Destruindo os Recursos
+
+Para evitar cobranças desnecessárias na sua conta AWS após os testes, destrua a infraestrutura executando:
+Bash
+
+terraform destroy -auto-approve
