@@ -12,7 +12,8 @@ crash.*
 # Exclude all variable files that might contain secrets (Good practice)
 *.tfvars
 *.tfvars.json
-.env                  # <-- ADICIONE ISSO para proteger suas credenciais locais
+.env                  
+# <-- ADICIONE ISSO para proteger suas credenciais locais
 
 # Lock file (Evita conflitos de concorrência local no repositório)
 .terraform.lock.hcl   # <-- ADICIONE ISSO para limpar seu repositório de metadados locais
